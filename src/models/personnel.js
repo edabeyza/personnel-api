@@ -4,6 +4,7 @@
 /* -------------------------------------------------------------------------- */
 
 const { mongoose } = require('../configs/dbConnection')
+const passwordEncrypt = require('../helpers/passwordEncrypt')
 
 const PersonnelSchema = new mongoose.Schema({
     departmentId: {
@@ -23,7 +24,7 @@ const PersonnelSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        set: function() { return 'sifre sifrelendi'}
+        set: (password) => passwordEncrypt(password)
     },
 
     firstName: String,

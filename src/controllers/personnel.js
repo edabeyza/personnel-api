@@ -48,5 +48,23 @@ module.exports.personnel = {
         res.status(204).send({
             error: false
         })
+    },
+
+    login: async (req, res) =>{
+        const { username, password } = req.body
+
+        if(username && password){
+            const user = await Personnel.findOne({ username, password })
+            
+            if(user)
+                console.log(user)
+
+        }else {
+            throw new Error('Please entry email and password')
+        }
+    },
+
+    logout: async (req, res) => {
+        
     }
 }

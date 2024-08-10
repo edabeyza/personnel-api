@@ -43,7 +43,7 @@ const PersonnelSchema = new mongoose.Schema({
         required: true,
         unique: true,
         validate: [
-            (email) => email.includes('@') && email.includes('.'),
+            (email) => email.includes('@') && email.includes('.'), // hocaya sor
             'Email is not valid'
         ]
     },

@@ -21,6 +21,12 @@ app.use(express.json())
 const { dbConnection } = require('./src/configs/dbConnection')
 dbConnection()
 
+/* ----------------------------- cookie-session ----------------------------- */
+app.use(require('cookie-session')({
+  secret: process.env.SECRET_KEY // hocaya sor
+}))
+
+
 /* --------------------------------- routes --------------------------------- */
 app.use('/departments', require('./src/routes/department'))
 app.use('/personnels', require('./src/routes/personnel'))
@@ -29,3 +35,6 @@ app.use('/personnels', require('./src/routes/personnel'))
 app.use(require('./src/middlewares/errorHandler'))
 
 app.listen(PORT, () => console.log('Listening on http:/127.0.0.1:' + PORT))
+
+/* ---------------------------------- sync ---------------------------------- */
+// require('./src/helpers/sync')()

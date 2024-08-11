@@ -49,5 +49,24 @@ module.exports.department = {
             error: !data.deletedCount,
             data
         })
-    }
+    },
+    // personnels: async (req, res) => {
+    //     const Personnel = require("../models/personnel");
+    
+    //     const data = await res.getModelList(
+    //       Personnel,
+    //       { departmentId: req.params.id },
+    //       "departmentId",
+    //     );
+    
+    //     res.status(200).send({
+    //       error: false,
+    //       detail: await res.getModelListDetails(
+    //         Personnel,
+    //         { departmentId: req.params.id },
+    //         "departmentId",
+    //       ),
+    //       data,
+    //     });
+    //   },
 }

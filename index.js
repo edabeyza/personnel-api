@@ -26,6 +26,8 @@ app.use(require('cookie-session')({
   secret: process.env.SECRET_KEY // hocaya sor
 }))
 
+/* ------------------------------ authorization ----------------------------- */
+app.use(require('./src/middlewares/authentication'))
 
 /* --------------------------------- routes --------------------------------- */
 app.use('/departments', require('./src/routes/department'))

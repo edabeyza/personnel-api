@@ -4,6 +4,7 @@
 /* -------------------------------------------------------------------------- */
 
 const { personnel } = require('../controllers/personnel')
+const permissions = require('../middlewares/permissions')
 
 const router = require('express').Router()
 
@@ -11,6 +12,8 @@ const router = require('express').Router()
 
 router.post('/login', personnel.login)
 router.all('/logout', personnel.logout)
+
+router.use(permissions.isAdmin)
 
 router.route('/')
     .get(personnel.list)

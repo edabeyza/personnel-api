@@ -30,6 +30,8 @@ app.use(require('cookie-session')({
 /* --------------------------------- routes --------------------------------- */
 app.use('/departments', require('./src/routes/department'))
 app.use('/personnels', require('./src/routes/personnel'))
+app.use('/auth', require('./src/routes/auth'))
+app.use('/token', require('./src/routes/token'))
 
 /* ------------------------------ errorHandler ------------------------------ */
 app.use(require('./src/middlewares/errorHandler'))

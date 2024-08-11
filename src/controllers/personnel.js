@@ -45,8 +45,9 @@ module.exports.personnel = {
     delete: async (req, res) => {
         const data = await Personnel.deleteOne({ _id: req.params.id })
 
-        res.status(204).send({
-            error: false
+        res.status(data.deletedCount ? 204 : 404).send({
+            error: !data.deletedCount,
+            data
         })
     },
 

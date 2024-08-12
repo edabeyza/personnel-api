@@ -24,5 +24,6 @@ const TokenSchema = new mongoose.Schema({
     collection: 'tokens',
     timestamps: true
 })
-
+ 
+/* --------------------------------- exports -------------------------------- */
 module.exports.Token = mongoose.model('Token', TokenSchema)

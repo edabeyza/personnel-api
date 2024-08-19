@@ -26,7 +26,7 @@ module.exports = {
 
     isAdminOrLead: (req, res, next) => {
 
-        const departmentId = req.params?.id // hocaya sor
+        const departmentId = req.params?.id // frontendden gelen department id
 
         if(req.user && req.user.Active && (req.user.isAdmin || (req.user.isLogin && req.user.departmentId == departmentId))) {
             next()

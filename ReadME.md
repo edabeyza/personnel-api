@@ -14,4 +14,3 @@
 - auth +
 - jwt
 
-## personnel api 20.video izlenecek ve token ve authentication konusu bitirilecek. +
